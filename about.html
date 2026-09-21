@@ -25,6 +25,7 @@
   </script>
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a059' stroke-width='1.5' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9' /%3E%3Ccircle cx='12' cy='12' r='3' fill='%23c5a059' /%3E%3Cpath d='M12 3v3M21 12h-3M12 21v-3M3 12h3' /%3E%3C/svg%3E">
 </head>
 <body class="bg-ivory dark:bg-[#12100e] text-espresso dark:text-[#f5ebd9] transition-colors duration-300 min-h-screen flex flex-col font-sans-ui">
 
@@ -50,8 +51,8 @@
           </div>
         </a>
 
-        <!-- DESKTOP NAV -->
-        <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
+        <!-- DESKTOP NAVIGATION -->
+        <nav class="hidden lg:flex items-center gap-6 lg:gap-8 text-sm font-medium">
           <a href="index.html" class="nav-link hover:text-brass transition-colors">Home</a>
           <a href="home-2.html" class="nav-link hover:text-brass transition-colors">Home 2</a>
 
@@ -62,8 +63,8 @@
           <a href="contact.html" class="nav-link hover:text-brass transition-colors">Contact</a>
         </nav>
 
-        <!-- UTILITIES -->
-        <div class="hidden sm:flex items-center gap-3 md:gap-4">
+        <!-- UTILITIES & ACTIONS -->
+        <div class="hidden lg:flex items-center gap-3 md:gap-4">
           <button class="rtl-toggle-btn w-9 h-9 text-xs font-semibold rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center" title="Toggle RTL Layout">
             <span>RTL</span>
           </button>
@@ -75,44 +76,50 @@
         </div>
 
         <!-- MOBILE HAMBURGER -->
-        <div class="flex items-center gap-2 md:hidden">
-          <button class="theme-toggle-btn p-1.5 rounded-full border border-brass/30 text-espresso dark:text-ivory" aria-label="Toggle dark mode">
-            <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          </button>
+        <div class="flex items-center gap-2 lg:hidden">
           <button id="mobile-menu-btn" class="p-2 rounded-md text-espresso dark:text-ivory hover:text-brass">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </div>
       </div>
     </div>
+  </header>
 
     <!-- MOBILE DRAWER -->
     <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden transition-opacity duration-300">
       <div class="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-ivory dark:bg-espresso p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
         <div>
-          <div class="flex items-center justify-between pb-6 border-b border-brass/20">
-            <span class="font-serif-display text-lg font-bold text-brass">VINYL</span>
+          <div class="flex items-center justify-end pb-6 border-b border-brass/20">
             <button id="mobile-menu-close" class="p-2 text-espresso dark:text-ivory hover:text-brass">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
           </div>
           <nav class="mt-6 flex flex-col gap-4 font-serif-editorial text-xl">
-            <a href="index.html" class="nav-link py-2 border-b border-brass/10">Home 1 — Record Room</a>
-            <a href="home-2.html" class="nav-link py-2 border-b border-brass/10">Home 2 — Analog Experience</a>
-            <a href="about.html" class="nav-link py-2 border-b border-brass/10 text-brass">About Story</a>
-            <a href="blog.html" class="nav-link py-2 border-b border-brass/10">Blog</a>
-            <a href="journal.html" class="nav-link py-2 border-b border-brass/10">Journal</a>
-            <a href="contact.html" class="nav-link py-2 border-b border-brass/10">Contact</a>
+            <a href="index.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Home</a>
+            <a href="home-2.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Home 2</a>
+            <a href="about.html" class="nav-link py-2 border-b border-brass/10 text-brass transition-colors">About</a>
+            <a href="blog.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Blog</a>
+            <a href="journal.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Journal</a>
+            <a href="contact.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Contact</a>
           </nav>
         </div>
         <div class="pt-6 border-t border-brass/20 space-y-4">
-          <button class="rtl-toggle-btn h-9 px-3 text-xs font-semibold rounded border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center">`n              Switch LTR / RTL</button>
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase tracking-widest text-muted">Preferences</span>
+            <div class="flex gap-3">
+              <button class="rtl-toggle-btn w-9 h-9 text-xs font-semibold rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center" title="Toggle RTL Layout">
+                <span>RTL</span>
+              </button>
+              <button class="theme-toggle-btn w-9 h-9 flex items-center justify-center rounded-full border border-brass/30 text-espresso dark:text-ivory hover:text-brass transition-colors" aria-label="Toggle dark mode">
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+              </button>
+            </div>
+          </div>
           <a href="signup.html" class="block w-full text-center py-2.5 text-xs uppercase font-semibold bg-brass text-white rounded">Signup</a>
         </div>
       </div>
     </div>
-  </header>
 
   <!-- MAIN CONTENT -->
   <main class="flex-grow">
@@ -186,7 +193,7 @@
           
           <div class="p-8 rounded-lg bg-ivory dark:bg-[#1c1815] border border-brass/20 space-y-3">
             <div class="w-10 h-10 rounded bg-brass/20 text-brass flex items-center justify-center font-bold text-lg">01</div>
-            <h3 class="font-serif-display text-2xl font-bold">Uncompromising Authenticity</h3>
+            <h3 class="font-serif-display text-2xl font-bold min-h-[6rem]">Uncompromising Authenticity</h3>
             <p class="text-xs text-muted leading-relaxed font-light">
               We never guess matrix numbers or pressing origins. Every LP is verified against master press logs, matrix etchings, label typography, and paper stock thickness.
             </p>
@@ -194,7 +201,7 @@
 
           <div class="p-8 rounded-lg bg-ivory dark:bg-[#1c1815] border border-brass/20 space-y-3">
             <div class="w-10 h-10 rounded bg-brass/20 text-brass flex items-center justify-center font-bold text-lg">02</div>
-            <h3 class="font-serif-display text-2xl font-bold">Ultrasonic Curation</h3>
+            <h3 class="font-serif-display text-2xl font-bold min-h-[6rem]">Ultrasonic Curation</h3>
             <p class="text-xs text-muted leading-relaxed font-light">
               We believe physical surface dirt should never obscure musical beauty. All discs undergo multi-stage ultrasonic de-gunking before entering our collection catalog.
             </p>
@@ -202,7 +209,7 @@
 
           <div class="p-8 rounded-lg bg-ivory dark:bg-[#1c1815] border border-brass/20 space-y-3">
             <div class="w-10 h-10 rounded bg-brass/20 text-brass flex items-center justify-center font-bold text-lg">03</div>
-            <h3 class="font-serif-display text-2xl font-bold">Analog Signal Integrity</h3>
+            <h3 class="font-serif-display text-2xl font-bold min-h-[6rem]">Analog Signal Integrity</h3>
             <p class="text-xs text-muted leading-relaxed font-light">
               We preserve pure continuous analog audio paths. No digital processing, no lossy conversion, only physical diamond tracing real vinyl grooves.
             </p>
@@ -210,7 +217,7 @@
 
           <div class="p-8 rounded-lg bg-ivory dark:bg-[#1c1815] border border-brass/20 space-y-3">
             <div class="w-10 h-10 rounded bg-brass/20 text-brass flex items-center justify-center font-bold text-lg">04</div>
-            <h3 class="font-serif-display text-2xl font-bold">Estate Archival Respect</h3>
+            <h3 class="font-serif-display text-2xl font-bold min-h-[6rem]">Estate Archival Respect</h3>
             <p class="text-xs text-muted leading-relaxed font-light">
               When cataloguing private estates, we honor the collector's life work by matching historical records with collectors who will cherish them for decades.
             </p>
@@ -218,7 +225,7 @@
 
           <div class="p-8 rounded-lg bg-ivory dark:bg-[#1c1815] border border-brass/20 space-y-3">
             <div class="w-10 h-10 rounded bg-brass/20 text-brass flex items-center justify-center font-bold text-lg">05</div>
-            <h3 class="font-serif-display text-2xl font-bold">Communal Experience</h3>
+            <h3 class="font-serif-display text-2xl font-bold min-h-[6rem]">Communal Experience</h3>
             <p class="text-xs text-muted leading-relaxed font-light">
               A record store should be a living cultural hub. Our lounges invite deep conversation, tea tasting, and communal discovery across generations.
             </p>
@@ -227,7 +234,7 @@
           <div class="p-8 rounded-lg bg-brass text-espresso flex flex-col justify-between">
             <div>
               <span class="text-xs uppercase font-mono font-bold tracking-widest text-espresso/80">JOIN OUR CIRCLE</span>
-              <h3 class="font-serif-display text-2xl font-bold mt-2">Become a Society Collector</h3>
+              <h3 class="font-serif-display text-2xl font-bold mt-2 min-h-[6rem]">Become a Society Collector</h3>
               <p class="text-xs text-espresso/80 leading-relaxed font-light mt-2">
                 Gain advance access to uncatalogued vault pressings before public release.
               </p>
@@ -290,29 +297,36 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          
-          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 space-y-2">
-            <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold">Mint (M) / Sealed</span>
-            <h4 class="font-serif-display text-xl font-bold pt-2">Flawless Original Condition</h4>
-            <p class="text-xs text-muted leading-relaxed font-light">Factory unplayed condition, often still in original shrink wrap or perforated seal.</p>
+          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20">
+            <div class="min-h-[9.5rem] flex flex-col items-start gap-3">
+              <span class="inline-block px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold leading-tight">Mint (M) / Sealed</span>
+              <h4 class="font-serif-display text-xl font-bold">Flawless Original Condition</h4>
+            </div>
+            <p class="text-xs text-muted leading-relaxed font-light mt-1">Factory unplayed condition, often still in original shrink wrap or perforated seal.</p>
           </div>
 
-          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 space-y-2">
-            <span class="px-2.5 py-1 rounded bg-brass/10 text-brass font-mono text-xs font-bold">Near Mint (NM)</span>
-            <h4 class="font-serif-display text-xl font-bold pt-2">Virtually Imperceptible Wear</h4>
-            <p class="text-xs text-muted leading-relaxed font-light">Disc shows high gloss sheen with zero surface scuffs or audible surface noise.</p>
+          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20">
+            <div class="min-h-[9.5rem] flex flex-col items-start gap-3">
+              <span class="inline-block px-2.5 py-1 rounded bg-brass/10 text-brass font-mono text-xs font-bold leading-tight">Near Mint (NM)</span>
+              <h4 class="font-serif-display text-xl font-bold">Virtually Imperceptible Wear</h4>
+            </div>
+            <p class="text-xs text-muted leading-relaxed font-light mt-1">Disc shows high gloss sheen with zero surface scuffs or audible surface noise.</p>
           </div>
 
-          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 space-y-2">
-            <span class="px-2.5 py-1 rounded bg-copper/10 text-copper font-mono text-xs font-bold">Excellent (EX / VG+)</span>
-            <h4 class="font-serif-display text-xl font-bold pt-2">Light Handling Marks</h4>
-            <p class="text-xs text-muted leading-relaxed font-light">Minor cosmetic sleeve rub marks that do not affect pure playback fidelity.</p>
+          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20">
+            <div class="min-h-[9.5rem] flex flex-col items-start gap-3">
+              <span class="inline-block px-2.5 py-1 rounded bg-copper/10 text-copper font-mono text-xs font-bold leading-tight">Excellent (EX / VG+)</span>
+              <h4 class="font-serif-display text-xl font-bold">Light Handling Marks</h4>
+            </div>
+            <p class="text-xs text-muted leading-relaxed font-light mt-1">Minor cosmetic sleeve rub marks that do not affect pure playback fidelity.</p>
           </div>
 
-          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 space-y-2">
-            <span class="px-2.5 py-1 rounded bg-burgundy/10 text-burgundy font-mono text-xs font-bold">Archival Vault (AV)</span>
-            <h4 class="font-serif-display text-xl font-bold pt-2">Museum Historical Relic</h4>
-            <p class="text-xs text-muted leading-relaxed font-light">Ultra-rare 1st pressings with historical significance sold with complete provenance.</p>
+          <div class="p-6 rounded bg-ivory-paper dark:bg-[#1c1815] border border-brass/20">
+            <div class="min-h-[9.5rem] flex flex-col items-start gap-3">
+              <span class="inline-block px-2.5 py-1 rounded bg-burgundy/10 text-burgundy font-mono text-xs font-bold leading-tight">Archival Vault (AV)</span>
+              <h4 class="font-serif-display text-xl font-bold">Museum Historical Relic</h4>
+            </div>
+            <p class="text-xs text-muted leading-relaxed font-light mt-1">Ultra-rare 1st pressings with historical significance sold with complete provenance.</p>
           </div>
 
         </div>

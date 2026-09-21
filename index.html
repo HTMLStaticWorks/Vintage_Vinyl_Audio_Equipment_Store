@@ -26,6 +26,7 @@
   </script>
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a059' stroke-width='1.5' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9' /%3E%3Ccircle cx='12' cy='12' r='3' fill='%23c5a059' /%3E%3Cpath d='M12 3v3M21 12h-3M12 21v-3M3 12h3' /%3E%3C/svg%3E">
 </head>
 <body class="bg-ivory dark:bg-[#12100e] text-espresso dark:text-[#f5ebd9] transition-colors duration-300 min-h-screen flex flex-col font-sans-ui">
 
@@ -52,7 +53,7 @@
         </a>
 
         <!-- DESKTOP NAVIGATION -->
-        <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
+        <nav class="hidden lg:flex items-center gap-6 lg:gap-8 text-sm font-medium">
           <a href="index.html" class="nav-link hover:text-brass transition-colors">Home</a>
           <a href="home-2.html" class="nav-link hover:text-brass transition-colors">Home 2</a>
 
@@ -64,7 +65,7 @@
         </nav>
 
         <!-- UTILITIES & ACTIONS -->
-        <div class="hidden sm:flex items-center gap-3 md:gap-4">
+        <div class="hidden lg:flex items-center gap-3 md:gap-4">
           <!-- RTL TOGGLE -->
           <button class="rtl-toggle-btn w-9 h-9 text-xs font-semibold rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center" title="Toggle RTL Layout">
             <span>RTL</span>
@@ -83,11 +84,7 @@
         </div>
 
         <!-- MOBILE HAMBURGER -->
-        <div class="flex items-center gap-2 md:hidden">
-          <button class="theme-toggle-btn p-1.5 rounded-full border border-brass/30 text-espresso dark:text-ivory" aria-label="Toggle dark mode">
-            <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          </button>
+        <div class="flex items-center gap-2 lg:hidden">
           
           <button id="mobile-menu-btn" class="p-2 rounded-md text-espresso dark:text-ivory hover:text-brass focus:outline-none" aria-label="Open mobile menu">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,34 +95,40 @@
 
       </div>
     </div>
+  </header>
 
     <!-- MOBILE MENU DRAWER -->
     <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden transition-opacity duration-300">
       <div class="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-ivory dark:bg-espresso p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
         <div>
-          <div class="flex items-center justify-between pb-6 border-b border-brass/20">
-            <span class="font-serif-display text-lg font-bold text-brass">VINYL</span>
+          <div class="flex items-center justify-end pb-6 border-b border-brass/20">
             <button id="mobile-menu-close" class="p-2 text-espresso dark:text-ivory hover:text-brass">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
           </div>
 
           <nav class="mt-6 flex flex-col gap-4 font-serif-editorial text-xl">
-            <a href="index.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Home 1 — The Record Room</a>
-            <a href="home-2.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Home 2 — Analog Experience</a>
-
-            <a href="about.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">About Our Story</a>
+            <a href="index.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Home</a>
+            <a href="home-2.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Home 2</a>
+            <a href="about.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">About</a>
             <a href="blog.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Blog</a>
-            <a href="journal.html" class="nav-link py-2 border-b border-brass/10">Journal</a>
-            <a href="contact.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Contact & Visit</a>
+            <a href="journal.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Journal</a>
+            <a href="contact.html" class="nav-link py-2 border-b border-brass/10 hover:text-brass transition-colors">Contact</a>
           </nav>
         </div>
 
         <div class="pt-6 border-t border-brass/20 space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs uppercase tracking-widest text-muted">Layout Direction</span>
-            <button class="rtl-toggle-btn h-9 px-3 text-xs font-semibold rounded border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center">`n              Switch LTR / RTL
-            </button>
+            <span class="text-xs uppercase tracking-widest text-muted">Preferences</span>
+            <div class="flex gap-3">
+              <button class="rtl-toggle-btn w-9 h-9 text-xs font-semibold rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center" title="Toggle RTL Layout">
+                <span>RTL</span>
+              </button>
+              <button class="theme-toggle-btn w-9 h-9 flex items-center justify-center rounded-full border border-brass/30 text-espresso dark:text-ivory hover:text-brass transition-colors" aria-label="Toggle dark mode">
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+              </button>
+            </div>
           </div>
           <div class="flex flex-col gap-2 pt-2">
             <a href="signup.html" class="w-full text-center py-2.5 text-xs uppercase tracking-wider font-semibold bg-brass text-white rounded hover:bg-copper transition-colors">Create Collector Account</a>
@@ -133,7 +136,6 @@
         </div>
       </div>
     </div>
-  </header>
 
   <!-- MAIN CONTENT -->
   <main class="flex-grow">
@@ -174,19 +176,19 @@
         <!-- Key Metrics Strip -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-20 pt-8 border-t border-ivory/10 text-left sm:text-center">
           <div>
-            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold">14,000+</div>
+            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold min-h-[4rem] md:min-h-[5rem]">14,000+</div>
             <div class="text-xs uppercase tracking-wider text-ivory/60 mt-1">Archival Pressings</div>
           </div>
           <div>
-            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold">100%</div>
+            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold min-h-[4rem] md:min-h-[5rem]">100%</div>
             <div class="text-xs uppercase tracking-wider text-ivory/60 mt-1">Ultrasonic Cleaned</div>
           </div>
           <div>
-            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold">Grade A+</div>
+            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold min-h-[4rem] md:min-h-[5rem]">Grade A+</div>
             <div class="text-xs uppercase tracking-wider text-ivory/60 mt-1">Goldmine Standard</div>
           </div>
           <div>
-            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold">London / Paris</div>
+            <div class="font-serif-display text-2xl md:text-3xl text-brass font-bold min-h-[4rem] md:min-h-[5rem]">London / Paris</div>
             <div class="text-xs uppercase tracking-wider text-ivory/60 mt-1">Boutique Showrooms</div>
           </div>
         </div>
@@ -228,9 +230,9 @@
             </div>
 
             <div class="p-6 flex flex-col flex-grow">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-serif-display text-2xl font-bold">Jazz & Bebop</h3>
-                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass">3,420 Records</span>
+              <div class="flex items-start justify-between mb-2 min-h-[6rem]">
+                <h3 class="font-serif-display text-2xl font-bold pr-2">Jazz & Bebop</h3>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass shrink-0 mt-1">3,420 Records</span>
               </div>
               <p class="text-xs text-muted leading-relaxed mb-6 font-light">
                 First-pressing Miles Davis, John Coltrane, Thelonious Monk, and Japanese audiophile reissues from Three Blind Mice.
@@ -262,9 +264,9 @@
             </div>
 
             <div class="p-6 flex flex-col flex-grow">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-serif-display text-2xl font-bold">Soul & Rare Groove</h3>
-                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass">2,850 Records</span>
+              <div class="flex items-start justify-between mb-2 min-h-[6rem]">
+                <h3 class="font-serif-display text-2xl font-bold pr-2">Soul & Rare Groove</h3>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass shrink-0 mt-1">2,850 Records</span>
               </div>
               <p class="text-xs text-muted leading-relaxed mb-6 font-light">
                 Deep Northern Soul 45s, Marvin Gaye master tapes, Aretha Franklin, Curtis Mayfield, and rare funk breaks.
@@ -296,9 +298,9 @@
             </div>
 
             <div class="p-6 flex flex-col flex-grow">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-serif-display text-2xl font-bold">Classic & Psych Rock</h3>
-                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass">4,110 Records</span>
+              <div class="flex items-start justify-between mb-2 min-h-[6rem]">
+                <h3 class="font-serif-display text-2xl font-bold pr-2">Classic & Psych Rock</h3>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass shrink-0 mt-1">4,110 Records</span>
               </div>
               <p class="text-xs text-muted leading-relaxed mb-6 font-light">
                 UK 1st Pressings of Pink Floyd, Led Zeppelin, David Bowie, Jimi Hendrix, and 1970s Krautrock gems.
@@ -330,9 +332,9 @@
             </div>
 
             <div class="p-6 flex flex-col flex-grow">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-serif-display text-2xl font-bold">Delta & Chicago Blues</h3>
-                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass">1,640 Records</span>
+              <div class="flex items-start justify-between mb-2 min-h-[6rem]">
+                <h3 class="font-serif-display text-2xl font-bold pr-2">Delta & Chicago Blues</h3>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass shrink-0 mt-1">1,640 Records</span>
               </div>
               <p class="text-xs text-muted leading-relaxed mb-6 font-light">
                 Muddy Waters, Howlin' Wolf, B.B. King, and rare 1960s acoustic folk pressings from Elektra Records.
@@ -364,9 +366,9 @@
             </div>
 
             <div class="p-6 flex flex-col flex-grow">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-serif-display text-2xl font-bold">Classical Audiophile</h3>
-                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass">1,920 Records</span>
+              <div class="flex items-start justify-between mb-2 min-h-[6rem]">
+                <h3 class="font-serif-display text-2xl font-bold pr-2">Classical Audiophile</h3>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass shrink-0 mt-1">1,920 Records</span>
               </div>
               <p class="text-xs text-muted leading-relaxed mb-6 font-light">
                 Decca Wide Band SXL, Columbia SAX, Deutsche Grammophon Tulip labels, and ambient minimalism.
@@ -398,9 +400,9 @@
             </div>
 
             <div class="p-6 flex flex-col flex-grow">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-serif-display text-2xl font-bold">Ambient & Analog Electronic</h3>
-                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass">1,180 Records</span>
+              <div class="flex items-start justify-between mb-2 min-h-[6rem]">
+                <h3 class="font-serif-display text-2xl font-bold pr-2">Ambient & Analog Electronic</h3>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brass/10 text-brass shrink-0 mt-1">1,180 Records</span>
               </div>
               <p class="text-xs text-muted leading-relaxed mb-6 font-light">
                 Kraftwerk originals, 90s Warp IDM 12-inch pressings, Modular Ambient, and Japanese City Pop synth pressings.
@@ -533,7 +535,7 @@
                 <div class="w-8 h-8 rounded bg-brass/20 text-brass flex items-center justify-center mb-3">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 0112.728 0"/></svg>
                 </div>
-                <h4 class="font-serif-display text-lg font-bold text-brass">Zero Digital Conversion</h4>
+                <h4 class="font-serif-display text-lg font-bold text-brass min-h-[3.5rem]">Zero Digital Conversion</h4>
                 <p class="text-xs text-ivory/70 mt-1 font-light">Pure analog signal path from diamond stylus to hand-wound transformers.</p>
               </div>
 
@@ -541,7 +543,7 @@
                 <div class="w-8 h-8 rounded bg-brass/20 text-brass flex items-center justify-center mb-3">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <h4 class="font-serif-display text-lg font-bold text-brass">Private Sessions</h4>
+                <h4 class="font-serif-display text-lg font-bold text-brass min-h-[3.5rem]">Private Sessions</h4>
                 <p class="text-xs text-ivory/70 mt-1 font-light">Reserve a 90-minute private session with complimentary Japanese teas and curated albums.</p>
               </div>
             </div>
@@ -601,7 +603,7 @@
                 <span class="absolute top-3 right-3 px-2.5 py-1 bg-brass text-espresso text-[10px] font-bold uppercase tracking-wider rounded">Restored Vintage</span>
               </div>
               <div class="text-xs text-brass font-mono mb-1">Thorens • Switzerland (1974)</div>
-              <h3 class="font-serif-display text-2xl font-bold mb-2">Thorens TD-124 Mk II</h3>
+              <h3 class="font-serif-display text-2xl font-bold mb-2 min-h-[6rem] leading-tight">Thorens TD-124 Mk II</h3>
               <p class="text-xs text-muted leading-relaxed font-light mb-4">
                 Fully restored IDLER-wheel drive table in custom solid walnut plinth with SME 3009 Tonearm and Ortofon SPU cartridge.
               </p>
@@ -620,7 +622,7 @@
                 <span class="absolute top-3 right-3 px-2.5 py-1 bg-brass text-espresso text-[10px] font-bold uppercase tracking-wider rounded">Audiophile Grade</span>
               </div>
               <div class="text-xs text-brass font-mono mb-1">McIntosh • USA (1968)</div>
-              <h3 class="font-serif-display text-2xl font-bold mb-2">McIntosh MC275 Tube Amp</h3>
+              <h3 class="font-serif-display text-2xl font-bold mb-2 min-h-[6rem] leading-tight">McIntosh MC275 Tube Amp</h3>
               <p class="text-xs text-muted leading-relaxed font-light mb-4">
                 Original stereo power amplifier featuring KT88 output tubes delivering 75 Watts per channel with classic chrome chassis.
               </p>
@@ -639,7 +641,7 @@
                 <span class="absolute top-3 right-3 px-2.5 py-1 bg-brass text-espresso text-[10px] font-bold uppercase tracking-wider rounded">Full Range</span>
               </div>
               <div class="text-xs text-brass font-mono mb-1">Tannoy • United Kingdom</div>
-              <h3 class="font-serif-display text-2xl font-bold mb-2">Tannoy Eaton Dual Concentric</h3>
+              <h3 class="font-serif-display text-2xl font-bold mb-2 min-h-[6rem] leading-tight">Tannoy Eaton Dual Concentric</h3>
               <p class="text-xs text-muted leading-relaxed font-light mb-4">
                 10-inch Dual Concentric drivers housed in oiled walnut cabinets. Exceptional mid-range clarity for vocal and jazz records.
               </p>
@@ -725,7 +727,7 @@
               </div>
               <div class="p-6 flex flex-col flex-grow">
                 <div class="text-[11px] text-muted font-mono mb-2">October 14, 2026 • 7 min read</div>
-                <h3 class="font-serif-display text-xl font-bold group-hover:text-brass transition-colors mb-3">
+                <h3 class="font-serif-display text-xl font-bold group-hover:text-brass transition-colors mb-3 min-h-[6rem]">
                   How to Identify a Genuine 1959 Blue Note First Pressing
                 </h3>
                 <p class="text-xs text-muted leading-relaxed font-light">
@@ -746,7 +748,7 @@
               </div>
               <div class="p-6 flex flex-col flex-grow">
                 <div class="text-[11px] text-muted font-mono mb-2">September 28, 2026 • 11 min read</div>
-                <h3 class="font-serif-display text-xl font-bold group-hover:text-brass transition-colors mb-3">
+                <h3 class="font-serif-display text-xl font-bold group-hover:text-brass transition-colors mb-3 min-h-[6rem]">
                   Direct Drive vs. Belt Drive: An Audiophile's Perspective
                 </h3>
                 <p class="text-xs text-muted leading-relaxed font-light">
@@ -767,7 +769,7 @@
               </div>
               <div class="p-6 flex flex-col flex-grow">
                 <div class="text-[11px] text-muted font-mono mb-2">September 12, 2026 • 5 min read</div>
-                <h3 class="font-serif-display text-xl font-bold group-hover:text-brass transition-colors mb-3">
+                <h3 class="font-serif-display text-xl font-bold group-hover:text-brass transition-colors mb-3 min-h-[6rem]">
                   The Science of Ultrasonic Cleaning for Archival Vinyl
                 </h3>
                 <p class="text-xs text-muted leading-relaxed font-light">
@@ -813,11 +815,11 @@
               </div>
             </div>
 
-            <div class="pt-4 flex flex-wrap gap-4">
-              <a href="contact.html" class="px-8 py-4 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-brass-light transition-all text-center">
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 max-w-xl">
+              <a href="contact.html" class="flex-1 px-8 py-4 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-brass-light transition-all text-center">
                 Store Location & Directions
               </a>
-              <a href="contact.html#listening-room" class="px-8 py-4 border border-ivory/30 text-ivory hover:border-brass hover:text-brass font-semibold uppercase tracking-wider text-xs rounded transition-all text-center">
+              <a href="contact.html#listening-room" class="flex-1 px-8 py-4 border border-ivory/30 text-ivory hover:border-brass hover:text-brass font-semibold uppercase tracking-wider text-xs rounded transition-all text-center">
                 Book Private Session
               </a>
             </div>
@@ -844,19 +846,30 @@
         
         <!-- Brand Info -->
         <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full border border-brass flex items-center justify-center bg-espresso text-brass">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-8 h-8 rounded-full border border-brass flex items-center justify-center bg-espresso text-brass group-hover:rotate-45 transition-transform duration-500">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5" fill="currentColor"/></svg>
             </div>
-            <span class="font-serif-display text-xl font-bold tracking-wide text-espresso dark:text-ivory">VINYL</span>
-          </div>
+            <span class="font-serif-display text-xl font-bold tracking-wide text-espresso dark:text-ivory group-hover:text-brass transition-colors">VINYL</span>
+          </a>
           <p class="text-xs text-espresso/60 dark:text-ivory/60 leading-relaxed max-w-sm font-light">
             Luxury vinyl boutique and audiophile listening room based in London and Paris. Curating rare original pressings and master analog sound since 2012.
           </p>
-          
-          <div class="text-brass font-mono text-[11px]">
-            Members of the International Vinyl Collectors Association (IVCA)
+
+          <div class="flex items-center gap-4 pt-2 text-espresso dark:text-ivory">
+            <a href="#" class="hover:text-brass transition-colors" aria-label="Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="hover:text-brass transition-colors" aria-label="X (Twitter)">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            </a>
+            <a href="#" class="hover:text-brass transition-colors" aria-label="Spotify">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.301 1.02zm1.44-3.3c-.301.42-.84.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15.001 10.62 18.72 12.9c.42.3.6.84.24 1.14zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.6.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.239.54-.959.72-1.56.3z"/></svg>
+            </a>
           </div>
+          <p class="text-[10px] text-brass font-mono pt-1">
+            Members of the International Vinyl Collectors Association (IVCA)
+          </p>
         </div>
 
         <!-- Navigation Links -->
