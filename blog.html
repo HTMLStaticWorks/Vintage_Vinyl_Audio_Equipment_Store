@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Groove Journal — Vinyl Magazine</title>
+  <meta name="description"
+    content="Editorial essays, archival guides, vintage audio hardware reviews, album artwork analysis, and vinyl preservation techniques from Vinyl curators.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brass: { DEFAULT: '#c5a059', light: '#dfc287', dark: '#9e7b37' },
+            copper: { DEFAULT: '#c86d44', hover: '#b85b32' },
+            espresso: { DEFAULT: '#1c1613', light: '#2a201b', dark: '#12100e' },
+            ivory: { DEFAULT: '#fbf8f3', paper: '#f4efe6', dark: '#efe7da' },
+            burgundy: { DEFAULT: '#6b2d38', dark: '#5a242e' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body
+  class="bg-ivory dark:bg-[#12100e] text-espresso dark:text-[#f5ebd9] transition-colors duration-300 min-h-screen flex flex-col font-sans-ui">
+
+  <!-- HEADER -->
+  <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 header-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- LOGO -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div
+            class="w-10 h-10 rounded-full border border-brass/60 flex items-center justify-center bg-espresso text-brass group-hover:rotate-45 transition-transform duration-500 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" stroke-width="1.5" />
+              <circle cx="12" cy="12" r="3" stroke-width="1.5" fill="currentColor" />
+              <path stroke-linecap="round" d="M12 3v3M21 12h-3M12 21v-3M3 12h3" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-serif-display text-xl sm:text-2xl tracking-wide font-bold text-espresso dark:text-ivory group-hover:text-brass transition-colors">
+              VINYL
+            </span>
+
+          </div>
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
+          <a href="index.html" class="nav-link hover:text-brass transition-colors">Home</a>
+          <a href="home-2.html" class="nav-link hover:text-brass transition-colors">Home 2</a>
+
+
+          <a href="about.html" class="nav-link hover:text-brass transition-colors">About</a>
+          <a href="blog.html" class="nav-link text-brass font-semibold hover:text-brass transition-colors">Blog</a>
+          <a href="journal.html" class="nav-link hover:text-brass transition-colors">Journal</a>
+          <a href="contact.html" class="nav-link hover:text-brass transition-colors">Contact</a>
+        </nav>
+
+        <!-- UTILITIES -->
+        <div class="hidden sm:flex items-center gap-3 md:gap-4">
+          <button
+            class="rtl-toggle-btn w-9 h-9 text-xs font-semibold rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center"
+            title="Toggle RTL Layout">
+            <span>RTL</span>
+          </button>
+          <button
+            class="theme-toggle-btn w-9 h-9 flex items-center justify-center rounded-full border border-brass/30 text-espresso dark:text-ivory hover:text-brass transition-colors"
+            aria-label="Toggle dark mode">
+            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          <a href="signup.html"
+            class="px-4 py-2 text-xs uppercase tracking-wider font-semibold bg-brass text-white hover:bg-copper rounded shadow-sm transition-all">Join
+            Lounge</a>
+        </div>
+
+        <!-- MOBILE HAMBURGER -->
+        <div class="flex items-center gap-2 md:hidden">
+          <button class="theme-toggle-btn p-1.5 rounded-full border border-brass/30 text-espresso dark:text-ivory"
+            aria-label="Toggle dark mode">
+            <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="p-2 rounded-md text-espresso dark:text-ivory hover:text-brass">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE DRAWER -->
+    <div id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden transition-opacity duration-300">
+      <div
+        class="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-ivory dark:bg-espresso p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-brass/20">
+            <span class="font-serif-display text-lg font-bold text-brass">VINYL</span>
+            <button id="mobile-menu-close" class="p-2 text-espresso dark:text-ivory hover:text-brass">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <nav class="mt-6 flex flex-col gap-4 font-serif-editorial text-xl">
+            <a href="index.html" class="nav-link py-2 border-b border-brass/10">Home 1 — Record Room</a>
+            <a href="home-2.html" class="nav-link py-2 border-b border-brass/10">Home 2 — Analog Experience</a>
+            <a href="about.html" class="nav-link py-2 border-b border-brass/10">About Story</a>
+            <a href="blog.html" class="nav-link py-2 border-b border-brass/10 text-brass">Blog</a>
+            <a href="journal.html" class="nav-link py-2 border-b border-brass/10">Journal</a>
+            <a href="contact.html" class="nav-link py-2 border-b border-brass/10">Contact</a>
+          </nav>
+        </div>
+        <div class="pt-6 border-t border-brass/20 space-y-4">
+          <button
+            class="rtl-toggle-btn h-9 px-3 text-xs font-semibold rounded border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center">`n
+            Switch LTR / RTL</button>
+          <a href="signup.html"
+            class="block w-full text-center py-2.5 text-xs uppercase font-semibold bg-brass text-white rounded">Create
+            Account</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow" data-tabs-container>
+
+    <!-- JOURNAL HERO & CATEGORY TABS -->
+    <section class="relative py-24 bg-espresso text-ivory border-b border-brass/20 overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-30">
+        <img src="https://images.pexels.com/photos/4929512/pexels-photo-4929512.jpeg" alt="Record Collection"
+          class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/80 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+          <span class="text-xs uppercase tracking-widest text-brass font-semibold">Editorial Magazine</span>
+          <h1 class="font-serif-display text-4xl sm:text-6xl font-bold text-ivory">Blog</h1>
+          <p class="text-ivory/80 text-sm font-light">Deep-dive essays on vinyl archiving, vintage hi-fi engineering,
+            album design, and music history.</p>
+        </div>
+
+        <!-- CATEGORY TABS -->
+        <div class="flex items-center justify-center gap-2 flex-wrap pt-4">
+          <button data-tab-target="all"
+            class="px-5 py-2 rounded-full text-xs font-semibold border border-brass bg-brass text-white transition-all">
+            All Articles
+          </button>
+          <button data-tab-target="collecting"
+            class="px-5 py-2 rounded-full text-xs font-semibold border border-brass/30 bg-ivory/5 text-ivory/70 hover:border-brass hover:text-brass transition-all">
+            Record Collecting
+          </button>
+          <button data-tab-target="hifi"
+            class="px-5 py-2 rounded-full text-xs font-semibold border border-brass/30 bg-ivory/5 text-ivory/70 hover:border-brass hover:text-brass transition-all">
+            Hi-Fi Hardware
+          </button>
+          <button data-tab-target="history"
+            class="px-5 py-2 rounded-full text-xs font-semibold border border-brass/30 bg-ivory/5 text-ivory/70 hover:border-brass hover:text-brass transition-all">
+            Music History
+          </button>
+          <button data-tab-target="care"
+            class="px-5 py-2 rounded-full text-xs font-semibold border border-brass/30 bg-ivory/5 text-ivory/70 hover:border-brass hover:text-brass transition-all">
+            Vinyl Care & Science
+          </button>
+          <button data-tab-target="guides"
+            class="px-5 py-2 rounded-full text-xs font-semibold border border-brass/30 bg-ivory/5 text-ivory/70 hover:border-brass hover:text-brass transition-all">
+            Buying Guides
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED STORY OVERSIZED LEAD -->
+    <section class="py-20 bg-ivory dark:bg-[#12100e]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div
+          class="bg-espresso text-ivory rounded-2xl overflow-hidden border border-brass/30 shadow-2xl grid grid-cols-1 lg:grid-cols-12 items-center"
+          data-tab-content="collecting">
+
+          <div class="lg:col-span-7 relative h-[400px] sm:h-[500px] img-zoom-container">
+            <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1400"
+              alt="Featured Article Vinyl Disc under lamp" class="w-full h-full object-cover">
+            <span
+              class="absolute top-6 left-6 px-3.5 py-1.5 bg-brass text-espresso text-xs font-bold uppercase tracking-wider rounded">Cover
+              Feature</span>
+          </div>
+
+          <div class="lg:col-span-5 p-8 sm:p-12 space-y-6">
+            <div class="text-xs text-brass font-mono">Record Collecting • October 14, 2026 • 12 Min Read</div>
+
+            <h2 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight">
+              How to Identify a Genuine 1959 Blue Note First Pressing
+            </h2>
+
+            <p class="font-sans-ui text-sm text-ivory/80 leading-relaxed font-light">
+              Unraveling the sacred marks of Rudy Van Gelder: "RVG" machine stamps, the elusive plastylite "ear" symbol,
+              47 West 63rd labels, and frame covers. A definitive guide for serious jazz archivists.
+            </p>
+
+            <div class="flex items-center gap-4 pt-2">
+              <div
+                class="w-10 h-10 rounded-full bg-brass/30 border border-brass text-brass font-bold flex items-center justify-center font-serif-display">
+                AP</div>
+              <div class="text-xs">
+                <div class="font-bold text-ivory">By Arthur Pendelton</div>
+                <div class="text-ivory/60">Senior Curator & Blue Note Discographer</div>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <a href="#" onclick="alert('Full editorial article modal loaded!'); return false;"
+                class="inline-block px-6 py-3.5 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-brass-light transition-colors">
+                Read Full Feature Story →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ARTICLES HYBRID GRID & ROWS SECTION -->
+    <section class="py-16 bg-ivory dark:bg-[#12100e]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+        <!-- ROW 1: 3-COLUMN CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Article 1: Hi-Fi -->
+          <article
+            class="bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 rounded-lg overflow-hidden flex flex-col justify-between"
+            data-tab-content="hifi">
+            <div>
+              <div class="relative h-56 overflow-hidden bg-espresso img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=800"
+                  alt="Direct Drive vs Belt Drive" class="w-full h-full object-cover">
+                <span
+                  class="absolute top-3 left-3 px-2.5 py-1 bg-espresso/80 text-brass text-[10px] font-mono rounded">Hi-Fi
+                  Hardware</span>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] text-muted font-mono mb-2">September 28, 2026 • 11 min read</div>
+                <h3 class="font-serif-display text-xl font-bold mb-3">
+                  Direct Drive vs. Belt Drive: An Audiophile's Perspective
+                </h3>
+                <p class="text-xs text-muted leading-relaxed font-light">
+                  Comparing pitch stability, motor rumble, torque response, and mechanical vibration isolation across
+                  vintage Technics SP-10 and Linn Sondek turntables.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-brass/10 flex items-center justify-between">
+              <span class="text-xs text-brass font-mono">By Marcus Thorne</span>
+              <a href="#" onclick="alert('Article snippet view'); return false;"
+                class="text-xs font-semibold text-brass hover:text-copper">Read Essay →</a>
+            </div>
+          </article>
+
+          <!-- Article 2: Care -->
+          <article
+            class="bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 rounded-lg overflow-hidden flex flex-col justify-between"
+            data-tab-content="care">
+            <div>
+              <div class="relative h-56 overflow-hidden bg-espresso img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=800"
+                  alt="Vinyl Cleaning Science" class="w-full h-full object-cover">
+                <span
+                  class="absolute top-3 left-3 px-2.5 py-1 bg-espresso/80 text-brass text-[10px] font-mono rounded">Vinyl
+                  Care</span>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] text-muted font-mono mb-2">September 12, 2026 • 5 min read</div>
+                <h3 class="font-serif-display text-xl font-bold mb-3">
+                  The Science of Ultrasonic Cleaning for Archival Vinyl
+                </h3>
+                <p class="text-xs text-muted leading-relaxed font-light">
+                  Why micro-cavitation fluids extract 60-year-old embedded dust deposits without degrading delicate
+                  polyvinyl chloride groove walls.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-brass/10 flex items-center justify-between">
+              <span class="text-xs text-brass font-mono">By Arthur Pendelton</span>
+              <a href="#" onclick="alert('Article snippet view'); return false;"
+                class="text-xs font-semibold text-brass hover:text-copper">Read Essay →</a>
+            </div>
+          </article>
+
+          <!-- Article 3: History -->
+          <article
+            class="bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 rounded-lg overflow-hidden flex flex-col justify-between"
+            data-tab-content="history">
+            <div>
+              <div class="relative h-56 overflow-hidden bg-espresso img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800"
+                  alt="Album Artwork Importance" class="w-full h-full object-cover">
+                <span
+                  class="absolute top-3 left-3 px-2.5 py-1 bg-espresso/80 text-brass text-[10px] font-mono rounded">Music
+                  History</span>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] text-muted font-mono mb-2">August 30, 2026 • 8 min read</div>
+                <h3 class="font-serif-display text-xl font-bold mb-3">
+                  Why 12-Inch Album Artwork Still Matters in 2026
+                </h3>
+                <p class="text-xs text-muted leading-relaxed font-light">
+                  Exploring Reid Miles' revolutionary typographic design at Blue Note Records and Hipgnosis' surrealist
+                  sleeve concepts for Pink Floyd.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-brass/10 flex items-center justify-between">
+              <span class="text-xs text-brass font-mono">By Claire Vance</span>
+              <a href="#" onclick="alert('Article snippet view'); return false;"
+                class="text-xs font-semibold text-brass hover:text-copper">Read Essay →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ROW 2: HORIZONTAL MAGAZINE FEATURE ROWS -->
+        <div class="space-y-8 pt-8 border-t border-brass/20">
+          <h3 class="font-serif-display text-2xl font-bold">Curator Columns & Guides</h3>
+
+          <div
+            class="bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 rounded-lg p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+            data-tab-content="guides">
+            <div class="md:col-span-4 h-48 rounded overflow-hidden bg-espresso img-zoom-container">
+              <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=800"
+                alt="Building Your First Audiophile Setup" class="w-full h-full object-cover">
+            </div>
+            <div class="md:col-span-8 space-y-3">
+              <span class="px-2.5 py-0.5 bg-brass/10 text-brass text-[10px] font-mono rounded">Buying Guides</span>
+              <h3 class="font-serif-display text-2xl font-bold">Building Your First Audiophile Listening Setup</h3>
+              <p class="text-xs text-muted leading-relaxed font-light">
+                From tonearm cartridge matching to room boundary acoustic reflection points: how to assemble a balanced
+                €2,500 analog playback rig.
+              </p>
+              <div class="pt-2 flex items-center justify-between text-xs font-mono">
+                <span class="text-muted">Published August 18, 2026 • 9 min read</span>
+                <a href="#" class="text-brass font-bold hover:underline">Read Guide →</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 rounded-lg p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+            data-tab-content="history">
+            <div class="md:col-span-4 h-48 rounded overflow-hidden bg-espresso img-zoom-container">
+              <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800"
+                alt="Golden Era of Jazz Pressings" class="w-full h-full object-cover">
+            </div>
+            <div class="md:col-span-8 space-y-3">
+              <span class="px-2.5 py-0.5 bg-burgundy/10 text-burgundy text-[10px] font-mono rounded">Music
+                History</span>
+              <h3 class="font-serif-display text-2xl font-bold">The Golden Era of Hard Bop Jazz Pressings (1955–1968)
+              </h3>
+              <p class="text-xs text-muted leading-relaxed font-light">
+                Why tape head alignment and valve compression in Rudy Van Gelder's Englewood Cliffs studio created the
+                most vibrant jazz recordings in history.
+              </p>
+              <div class="pt-2 flex items-center justify-between text-xs font-mono">
+                <span class="text-muted">Published August 04, 2026 • 14 min read</span>
+                <a href="#" class="text-brass font-bold hover:underline">Read Essay →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEWSLETTER BANNER -->
+    <section class="py-20 bg-espresso text-ivory">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <span class="text-xs uppercase tracking-widest text-brass font-semibold">Subscribe to Journal</span>
+        <h2 class="font-serif-display text-3xl sm:text-5xl font-bold">Get Archival Essays Delivered Monthly</h2>
+        <p class="text-xs sm:text-sm text-ivory/70 max-w-xl mx-auto font-light">
+          Join 18,000+ analog audiophiles and rare vinyl collectors. No spam, only deeply researched discographies and
+          hardware reviews.
+        </p>
+        <form class="newsletter-form flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto pt-2">
+          <input type="email" required placeholder="Enter your email address"
+            class="w-full sm:w-2/3 px-4 py-3 rounded bg-ivory/10 border border-brass/30 text-ivory text-xs">
+          <button type="submit"
+            class="w-full sm:w-1/3 py-3 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-brass-light transition-colors">
+            Subscribe Now
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ivory dark:bg-[#0e0c0a] text-espresso/80 dark:text-ivory/80 border-t border-brass/20 text-xs py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-espresso/10 dark:border-ivory/10">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-full border border-brass flex items-center justify-center bg-espresso text-brass">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke-width="1.5" />
+                <circle cx="12" cy="12" r="3" stroke-width="1.5" fill="currentColor" />
+              </svg>
+            </div>
+            <span class="font-serif-display text-xl font-bold tracking-wide text-espresso dark:text-ivory">VINYL</span>
+          </div>
+          <p class="text-xs text-espresso/60 dark:text-ivory/60 leading-relaxed max-w-sm font-light">
+            Luxury vinyl boutique and audiophile listening room based in London and Paris. Curating rare original
+            pressings and master analog sound since 2012.
+          </p>
+
+          <div class="flex items-center gap-4 pt-2 text-espresso dark:text-ivory">
+            <a href="#" class="hover:text-brass transition-colors" aria-label="Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="hover:text-brass transition-colors" aria-label="X (Twitter)">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            </a>
+            <a href="#" class="hover:text-brass transition-colors" aria-label="Spotify">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.301 1.02zm1.44-3.3c-.301.42-.84.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15.001 10.62 18.72 12.9c.42.3.6.84.24 1.14zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.6.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.239.54-.959.72-1.56.3z"/></svg>
+            </a>
+          </div>
+          <p class="text-[10px] text-brass font-mono pt-1">
+            Members of the International Vinyl Collectors Association (IVCA)
+          </p>
+
+          
+        </div>
+        <div>
+          <h4 class="font-serif-display text-sm font-bold text-brass uppercase tracking-wider mb-4">Explore</h4>
+          <ul class="space-y-2.5 font-light">
+            <li><a href="index.html" class="hover:text-brass transition-colors">Home 1 — Record Room</a></li>
+            <li><a href="home-2.html" class="hover:text-brass transition-colors">Home 2 — Analog Experience</a></li>
+            <li><a href="about.html" class="hover:text-brass transition-colors">About Our Story</a></li>
+            <li><a href="blog.html" class="hover:text-brass transition-colors">Blog</a></li>
+            <li><a href="journal.html" class="hover:text-brass transition-colors">Journal</a></li>
+            <li><a href="contact.html" class="hover:text-brass transition-colors">Boutique & Map</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-serif-display text-sm font-bold text-brass uppercase tracking-wider mb-4">Archives</h4>
+          <ul class="space-y-2.5 font-light">
+            <li><a href="index.html#collection" class="hover:text-brass transition-colors">Jazz & Bebop Pressings</a>
+            </li>
+            <li><a href="index.html#collection" class="hover:text-brass transition-colors">Restored Turntables</a></li>
+            <li><a href="contact.html#sell" class="hover:text-brass transition-colors">Sell Estate Collections</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif-display text-sm font-bold text-brass uppercase tracking-wider mb-2">Society Newsletter
+          </h4>
+          <form class="newsletter-form space-y-2">
+            <input type="email" required placeholder="collector@domain.com"
+              class="w-full px-3 py-2 rounded bg-espresso/5 dark:bg-ivory/5 border border-brass/30 text-espresso dark:text-ivory text-xs">
+            <button type="submit"
+              class="w-full py-2 bg-brass text-espresso font-semibold uppercase tracking-wider text-[10px] rounded hover:bg-copper hover:text-white">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div
+        class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-espresso/50 dark:text-ivory/50">
+        <div>© 2026 Vinyl Fine Vinyl & Audiophile Equipment Ltd. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-brass transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-brass transition-colors">Collector Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

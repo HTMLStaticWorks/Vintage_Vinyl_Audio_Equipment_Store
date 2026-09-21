@@ -1,2 +1,0 @@
-# Vintage_Vinyl_Audio_Equipment_Store
-Automated website repository for Vintage_Vinyl_Audio_Equipment_Store

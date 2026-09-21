@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Visit Showrooms — Vinyl</title>
+  <meta name="description" content="Visit Vinyl flagship vinyl boutiques and listening rooms in London and Paris. Schedule private appointments, inquire about estate appraisal, or contact our cataloguers.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brass: { DEFAULT: '#c5a059', light: '#dfc287', dark: '#9e7b37' },
+            copper: { DEFAULT: '#c86d44', hover: '#b85b32' },
+            espresso: { DEFAULT: '#1c1613', light: '#2a201b', dark: '#12100e' },
+            ivory: { DEFAULT: '#fbf8f3', paper: '#f4efe6', dark: '#efe7da' },
+            burgundy: { DEFAULT: '#6b2d38', dark: '#5a242e' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Leaflet CSS & JS for Interactive Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-ivory dark:bg-[#12100e] text-espresso dark:text-[#f5ebd9] transition-colors duration-300 min-h-screen flex flex-col font-sans-ui">
+
+  <!-- HEADER -->
+  <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 header-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 rounded-full border border-brass/60 flex items-center justify-center bg-espresso text-brass group-hover:rotate-45 transition-transform duration-500 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="3" stroke-width="1.5" fill="currentColor"/>
+              <path stroke-linecap="round" d="M12 3v3M21 12h-3M12 21v-3M3 12h3"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif-display text-xl sm:text-2xl tracking-wide font-bold text-espresso dark:text-ivory group-hover:text-brass transition-colors">
+              VINYL
+            </span>
+            
+          </div>
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
+          <a href="index.html" class="nav-link hover:text-brass transition-colors">Home</a>
+          <a href="home-2.html" class="nav-link hover:text-brass transition-colors">Home 2</a>
+
+
+          <a href="about.html" class="nav-link hover:text-brass transition-colors">About</a>
+          <a href="blog.html" class="nav-link hover:text-brass transition-colors">Blog</a>
+          <a href="journal.html" class="nav-link hover:text-brass transition-colors">Journal</a>
+          <a href="contact.html" class="nav-link text-brass font-semibold hover:text-brass transition-colors">Contact</a>
+        </nav>
+
+        <!-- UTILITIES -->
+        <div class="hidden sm:flex items-center gap-3 md:gap-4">
+          <button class="rtl-toggle-btn w-9 h-9 text-xs font-semibold rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center" title="Toggle RTL Layout">
+            <span>RTL</span>
+          </button>
+          <button class="theme-toggle-btn w-9 h-9 flex items-center justify-center rounded-full border border-brass/30 text-espresso dark:text-ivory hover:text-brass transition-colors" aria-label="Toggle dark mode">
+            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <a href="signup.html" class="px-4 py-2 text-xs uppercase tracking-wider font-semibold bg-brass text-white hover:bg-copper rounded shadow-sm transition-all">Signup</a>
+        </div>
+
+        <!-- MOBILE HAMBURGER -->
+        <div class="flex items-center gap-2 md:hidden">
+          <button class="theme-toggle-btn p-1.5 rounded-full border border-brass/30 text-espresso dark:text-ivory" aria-label="Toggle dark mode">
+            <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <button id="mobile-menu-btn" class="p-2 rounded-md text-espresso dark:text-ivory hover:text-brass">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE DRAWER -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden transition-opacity duration-300">
+      <div class="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-ivory dark:bg-espresso p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-brass/20">
+            <span class="font-serif-display text-lg font-bold text-brass">VINYL</span>
+            <button id="mobile-menu-close" class="p-2 text-espresso dark:text-ivory hover:text-brass">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <nav class="mt-6 flex flex-col gap-4 font-serif-editorial text-xl">
+            <a href="index.html" class="nav-link py-2 border-b border-brass/10">Home 1 — Record Room</a>
+            <a href="home-2.html" class="nav-link py-2 border-b border-brass/10">Home 2 — Analog Experience</a>
+            <a href="about.html" class="nav-link py-2 border-b border-brass/10">About Story</a>
+            <a href="blog.html" class="nav-link py-2 border-b border-brass/10">Blog</a>
+            <a href="journal.html" class="nav-link py-2 border-b border-brass/10">Journal</a>
+            <a href="contact.html" class="nav-link py-2 border-b border-brass/10 text-brass">Contact</a>
+          </nav>
+        </div>
+        <div class="pt-6 border-t border-brass/20 space-y-4">
+          <button class="rtl-toggle-btn h-9 px-3 text-xs font-semibold rounded border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center">`n              Switch LTR / RTL</button>
+          <a href="signup.html" class="block w-full text-center py-2.5 text-xs uppercase font-semibold bg-brass text-white rounded">Signup</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow">
+    
+    <!-- CONTACT SECTION 1 — HERO -->
+    <section class="relative py-24 bg-espresso text-ivory overflow-hidden">
+      <div class="absolute inset-0 opacity-30">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600" alt="Vinyl Store Front facade" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/80 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <span class="text-xs uppercase tracking-widest text-brass font-semibold">Connect & Visit</span>
+        <h1 class="font-serif-display text-4xl sm:text-6xl font-bold">Visit Our International Boutiques</h1>
+        <p class="font-sans-ui text-base text-ivory/80 max-w-2xl mx-auto font-light">
+          Whether you seek a rare original press, wish to audition tube amplification, or discuss an estate acquisition, our specialists welcome your inquiry.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION 2 — VISIT US (STORE DETAILS & HOURS) -->
+    <section class="py-20 bg-ivory dark:bg-[#12100e]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Store 1: London -->
+          <div class="p-8 rounded-lg bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 space-y-4">
+            <span class="px-2.5 py-1 bg-brass/10 text-brass font-mono text-xs font-bold rounded">Flagship Showroom</span>
+            <h3 class="font-serif-display text-2xl font-bold">Mayfair Boutique • London</h3>
+            <div class="text-xs text-muted space-y-2 font-light">
+              <p class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brass shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                42 Mount Street, Mayfair, London W1K 2RX, UK
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-brass shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h32a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h32a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"/></svg>
+                +44 (0)20 7946 0912
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-brass shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                london@vinyl.com
+              </p>
+            </div>
+            <div class="pt-4 border-t border-brass/10 text-xs">
+              <span class="font-bold text-brass">Opening Hours:</span>
+              <div class="text-muted font-mono mt-1">Tue – Sat: 10:00 – 19:00<br>Sun & Mon: Private By Appointment</div>
+            </div>
+          </div>
+
+          <!-- Store 2: Paris -->
+          <div class="p-8 rounded-lg bg-ivory-paper dark:bg-[#1c1815] border border-brass/20 space-y-4">
+            <span class="px-2.5 py-1 bg-copper/10 text-copper font-mono text-xs font-bold rounded">Listening Lounge</span>
+            <h3 class="font-serif-display text-2xl font-bold">Le Marais Boutique • Paris</h3>
+            <div class="text-xs text-muted space-y-2 font-light">
+              <p class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-copper shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                18 Rue Vieille du Temple, 75004 Paris, France
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h32a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h32a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"/></svg>
+                +33 (0)1 42 68 55 90
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                paris@vinyl.com
+              </p>
+            </div>
+            <div class="pt-4 border-t border-brass/10 text-xs">
+              <span class="font-bold text-copper">Opening Hours:</span>
+              <div class="text-muted font-mono mt-1">Tue – Sun: 11:00 – 20:00<br>Monday: Closed</div>
+            </div>
+          </div>
+
+          <!-- Estate Concierge -->
+          <div class="p-8 rounded-lg bg-espresso text-ivory border border-brass/30 space-y-4 flex flex-col justify-between">
+            <div>
+              <span class="px-2.5 py-1 bg-brass text-espresso font-mono text-xs font-bold rounded">Worldwide Appraisal</span>
+              <h3 class="font-serif-display text-2xl font-bold mt-3">Estate Concierge Desk</h3>
+              <p class="text-xs text-ivory/70 leading-relaxed font-light mt-2">
+                For private record estate collections above 500 LPs, our senior cataloguers offer worldwide travel for in-home appraisals and private purchase.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-brass/20">
+              <a href="#sell" class="inline-block w-full py-3 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-brass-light transition-colors text-center">
+                Inquire Estate Desk →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION 3 — INTERACTIVE MAP -->
+    <section class="py-12 bg-ivory-paper dark:bg-[#191613] border-y border-brass/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-brass font-semibold">Interactive Showroom Map</span>
+            <h2 class="font-serif-display text-2xl font-bold">Find Vinyl</h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="map-btn-london" class="px-3 py-1.5 rounded text-xs font-mono bg-brass text-white font-bold">London (Mayfair)</button>
+            <button id="map-btn-paris" class="px-3 py-1.5 rounded text-xs font-mono bg-secondary text-muted border border-border-color hover:border-brass">Paris (Le Marais)</button>
+          </div>
+        </div>
+
+        <!-- Leaflet Map Container -->
+        <div id="store-map" class="w-full h-96 rounded-xl border-2 border-brass/30 shadow-inner z-10"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION 4 — CONTACT / ENQUIRY FORM -->
+    <section class="py-24 bg-ivory dark:bg-[#12100e]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-12 space-y-3">
+          <span class="text-xs uppercase tracking-widest text-brass font-semibold">Get In Touch</span>
+          <h2 class="font-serif-display text-3xl sm:text-5xl font-bold">Submit Curator Enquiry</h2>
+          <p class="text-muted text-sm font-light">Fill out the form below and a curator will respond within 12 hours.</p>
+        </div>
+
+        <form id="contact-form" class="bg-ivory-paper dark:bg-[#1c1815] p-8 sm:p-12 rounded-xl border border-brass/20 shadow-xl space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="contact-name" class="block text-xs uppercase tracking-wider text-muted font-semibold mb-2">Full Name *</label>
+              <input type="text" id="contact-name" required placeholder="e.g. Lord Julian Sterling" class="w-full px-4 py-3 rounded text-xs">
+            </div>
+
+            <div>
+              <label for="contact-email" class="block text-xs uppercase tracking-wider text-muted font-semibold mb-2">Email Address *</label>
+              <input type="email" id="contact-email" required placeholder="julian@collector.com" class="w-full px-4 py-3 rounded text-xs">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="contact-phone" class="block text-xs uppercase tracking-wider text-muted font-semibold mb-2">Phone Number (Optional)</label>
+              <input type="tel" id="contact-phone" placeholder="+44 7700 900077" class="w-full px-4 py-3 rounded text-xs">
+            </div>
+
+            <div>
+              <label for="contact-type" class="block text-xs uppercase tracking-wider text-muted font-semibold mb-2">Enquiry Type *</label>
+              <select id="contact-type" required class="w-full px-4 py-3 rounded text-xs bg-card text-main">
+                <option value="purchase">Record Purchase Enquiry</option>
+                <option value="sell">Sell My Collection / Estate</option>
+                <option value="audio">Audio Equipment & Specs</option>
+                <option value="visit">Store Visit & Lounge Session</option>
+                <option value="general">General Collector Enquiry</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="contact-message" class="block text-xs uppercase tracking-wider text-muted font-semibold mb-2">Message & Details *</label>
+            <textarea id="contact-message" rows="5" required placeholder="Please provide specific LP album titles, matrix numbers, or equipment requirements..." class="w-full px-4 py-3 rounded text-xs"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-copper hover:text-white transition-all transform hover:-translate-y-0.5 shadow-md">
+            Transmit Inquiry to Curators
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION 5 & 6 — LISTENING ROOM & SELL CTA TABS -->
+    <section id="listening-room" class="py-24 bg-espresso text-ivory border-t border-brass/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs uppercase tracking-widest text-brass font-semibold">Private Listening Session</span>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-bold leading-tight">
+              Reserve Your 90-Minute Private Lounge Session
+            </h2>
+            <p class="font-sans-ui text-sm text-ivory/80 leading-relaxed font-light">
+              Experience any album from our collection on Garrard 301 turntables and Kondo Audionote amplifiers in an acoustically isolated private suite.
+            </p>
+          </div>
+
+          <div id="sell" class="lg:col-span-6 bg-ivory/5 p-8 rounded-xl border border-brass/30 backdrop-blur-md">
+            <h3 class="font-serif-display text-2xl font-bold text-brass mb-4">Book Private Appointment</h3>
+            <form id="listening-room-form" class="space-y-4">
+              <div>
+                <label class="block text-xs uppercase text-ivory/70 mb-1">Preferred Date *</label>
+                <input type="date" id="session-date" required class="w-full px-3 py-2.5 rounded bg-black/40 text-ivory border border-brass/30 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs uppercase text-ivory/70 mb-1">Number of Guests</label>
+                <select id="session-guests" class="w-full px-3 py-2.5 rounded bg-black/40 text-ivory border border-brass/30 text-xs">
+                  <option value="1">1 Person (Solo Audiophile Session)</option>
+                  <option value="2">2 Persons (Private Couple)</option>
+                  <option value="4">3–4 Persons (Small Group Session)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs uppercase text-ivory/70 mb-1">Requested Album / Artist to Audition</label>
+                <input type="text" placeholder="e.g. Kind of Blue or Pink Floyd Meddle" class="w-full px-3 py-2.5 rounded bg-black/40 text-ivory border border-brass/30 text-xs">
+              </div>
+              <button type="submit" class="w-full py-3 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-brass-light transition-colors">
+                Confirm Lounge Reservation
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION 7 — SOCIAL & COMMUNITY -->
+    <section class="py-16 bg-ivory-paper dark:bg-[#161310] border-t border-brass/20 text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <span class="text-xs uppercase tracking-widest text-brass font-semibold">Join The Vinyl Society</span>
+        <h3 class="font-serif-display text-2xl font-bold">Follow Our Daily Vault Additions</h3>
+        <div class="flex items-center justify-center gap-6 pt-2">
+          <a href="#" class="p-3 rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors" title="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="p-3 rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors" title="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+          </a>
+          <a href="#" class="p-3 rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors" title="Spotify">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.376 0 0 5.377 0 12s5.376 12 12 12 12-5.377 12-12S18.624 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.721 1.62.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ivory dark:bg-[#0e0c0a] text-espresso/80 dark:text-ivory/80 border-t border-brass/20 text-xs py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-espresso/10 dark:border-ivory/10">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full border border-brass flex items-center justify-center bg-espresso text-brass">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5" fill="currentColor"/></svg>
+            </div>
+            <span class="font-serif-display text-xl font-bold tracking-wide text-espresso dark:text-ivory">VINYL</span>
+          </div>
+          <p class="text-xs text-espresso/60 dark:text-ivory/60 leading-relaxed max-w-sm font-light">
+            Luxury vinyl boutique and audiophile listening room based in London and Paris. Curating rare original pressings and master analog sound since 2012.
+          </p>
+
+          <div class="flex items-center gap-4 pt-2 text-espresso dark:text-ivory">
+            <a href="#" class="hover:text-brass transition-colors" aria-label="Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="hover:text-brass transition-colors" aria-label="X (Twitter)">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            </a>
+            <a href="#" class="hover:text-brass transition-colors" aria-label="Spotify">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.301 1.02zm1.44-3.3c-.301.42-.84.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15.001 10.62 18.72 12.9c.42.3.6.84.24 1.14zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.6.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.239.54-.959.72-1.56.3z"/></svg>
+            </a>
+          </div>
+          <p class="text-[10px] text-brass font-mono pt-1">
+            Members of the International Vinyl Collectors Association (IVCA)
+          </p>
+
+          
+        </div>
+        <div>
+          <h4 class="font-serif-display text-sm font-bold text-brass uppercase tracking-wider mb-4">Explore</h4>
+          <ul class="space-y-2.5 font-light">
+            <li><a href="index.html" class="hover:text-brass transition-colors">Home 1 — Record Room</a></li>
+            <li><a href="home-2.html" class="hover:text-brass transition-colors">Home 2 — Analog Experience</a></li>
+            <li><a href="about.html" class="hover:text-brass transition-colors">About Our Story</a></li>
+            <li><a href="blog.html" class="hover:text-brass transition-colors">Blog</a></li>
+            <li><a href="journal.html" class="hover:text-brass transition-colors">Journal</a></li>
+            <li><a href="contact.html" class="hover:text-brass transition-colors">Boutique & Map</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-serif-display text-sm font-bold text-brass uppercase tracking-wider mb-4">Archives</h4>
+          <ul class="space-y-2.5 font-light">
+            <li><a href="index.html#collection" class="hover:text-brass transition-colors">Jazz & Bebop Pressings</a></li>
+            <li><a href="index.html#collection" class="hover:text-brass transition-colors">Restored Turntables</a></li>
+            <li><a href="contact.html#sell" class="hover:text-brass transition-colors">Sell Estate Collections</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif-display text-sm font-bold text-brass uppercase tracking-wider mb-2">Society Newsletter</h4>
+          <form class="newsletter-form space-y-2">
+            <input type="email" required placeholder="collector@domain.com" class="w-full px-3 py-2 rounded bg-espresso/5 dark:bg-ivory/5 border border-brass/30 text-espresso dark:text-ivory text-xs">
+            <button type="submit" class="w-full py-2 bg-brass text-espresso font-semibold uppercase tracking-wider text-[10px] rounded hover:bg-copper hover:text-white">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-espresso/50 dark:text-ivory/50">
+        <div>&copy; 2026 Vinyl Fine Vinyl & Audiophile Equipment Ltd. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-brass transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-brass transition-colors">Collector Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  
+  <!-- Interactive Leaflet Map Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const londonCoords = [51.5095, -0.1508]; // Mayfair London
+      const parisCoords = [48.8576, 2.3567];   // Le Marais Paris
+
+      const map = L.map('store-map').setView(londonCoords, 14);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        maxZoom: 18
+      }).addTo(map);
+
+      const brassIcon = L.divIcon({
+        className: 'custom-map-pin',
+        html: `<div style="background-color:#c5a059; width:24px; height:24px; border-radius:50%; border:3px solid #1c1613; box-shadow:0 4px 10px rgba(0,0,0,0.5);"></div>`,
+        iconSize: [24, 24]
+      });
+
+      const londonMarker = L.marker(londonCoords, { icon: brassIcon }).addTo(map)
+        .bindPopup('<b>Vinyl — Mayfair</b><br>42 Mount Street, London W1K 2RX')
+        .openPopup();
+
+      const parisMarker = L.marker(parisCoords, { icon: brassIcon }).addTo(map)
+        .bindPopup('<b>Vinyl — Le Marais</b><br>18 Rue Vieille du Temple, 75004 Paris');
+
+      const btnLondon = document.getElementById('map-btn-london');
+      const btnParis = document.getElementById('map-btn-paris');
+
+      if (btnLondon && btnParis) {
+        btnLondon.addEventListener('click', () => {
+          map.flyTo(londonCoords, 14);
+          londonMarker.openPopup();
+          btnLondon.className = 'px-3 py-1.5 rounded text-xs font-mono bg-brass text-white font-bold';
+          btnParis.className = 'px-3 py-1.5 rounded text-xs font-mono bg-secondary text-muted border border-border-color hover:border-brass';
+        });
+
+        btnParis.addEventListener('click', () => {
+          map.flyTo(parisCoords, 14);
+          parisMarker.openPopup();
+          btnParis.className = 'px-3 py-1.5 rounded text-xs font-mono bg-brass text-white font-bold';
+          btnLondon.className = 'px-3 py-1.5 rounded text-xs font-mono bg-secondary text-muted border border-border-color hover:border-brass';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

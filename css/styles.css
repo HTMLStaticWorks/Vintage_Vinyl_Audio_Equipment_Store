@@ -1,0 +1,225 @@
+/* Needle & Groove — Luxury Vintage Vinyl & Audiophile Boutique Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #fbf8f3;
+  --bg-secondary: #f4efe6;
+  --bg-tertiary: #efe7da;
+  --bg-card: #ffffff;
+  --bg-accent: #2a201b;
+  --text-main: #1c1613;
+  --text-muted: #665b55;
+  --text-light: #9e9188;
+  --copper: #c86d44;
+  --copper-hover: #b85b32;
+  --brass: #c5a059;
+  --brass-light: #dfc287;
+  --burgundy: #6b2d38;
+  --border-color: #e5ded3;
+  --shadow-sm: 0 2px 8px rgba(28, 22, 19, 0.04);
+  --shadow-md: 0 8px 24px rgba(28, 22, 19, 0.08);
+  --shadow-lg: 0 16px 40px rgba(28, 22, 19, 0.12);
+}
+
+.dark {
+  --bg-primary: #12100e;
+  --bg-secondary: #191613;
+  --bg-tertiary: #211c18;
+  --bg-card: #1c1815;
+  --bg-accent: #f4efe6;
+  --text-main: #f5ebd9;
+  --text-muted: #b0a396;
+  --text-light: #7a7065;
+  --copper: #d97d52;
+  --copper-hover: #e68d62;
+  --brass: #d4af37;
+  --brass-light: #ebd076;
+  --burgundy: #8a3b49;
+  --border-color: #2e2721;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Base Styles */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+/* Typography Classes */
+.font-serif-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Grain Overlay & Vinyl Aesthetics */
+.vinyl-grooves-bg {
+  background-image: radial-gradient(circle at center, transparent 30%, rgba(28, 22, 19, 0.03) 31%, rgba(28, 22, 19, 0.03) 32%, transparent 33%),
+                    radial-gradient(circle at center, transparent 50%, rgba(28, 22, 19, 0.03) 51%, rgba(28, 22, 19, 0.03) 52%, transparent 53%);
+  background-size: 80px 80px;
+}
+
+.dark .vinyl-grooves-bg {
+  background-image: radial-gradient(circle at center, transparent 30%, rgba(245, 235, 217, 0.02) 31%, rgba(245, 235, 217, 0.02) 32%, transparent 33%),
+                    radial-gradient(circle at center, transparent 50%, rgba(245, 235, 217, 0.02) 51%, rgba(245, 235, 217, 0.02) 52%, transparent 53%);
+}
+
+/* Animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+/* Glassmorphism & Header */
+.header-glass {
+  background-color: rgba(251, 248, 243, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dark .header-glass {
+  background-color: rgba(18, 16, 14, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brass);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--copper);
+}
+
+/* Form Styles & Focus States */
+input, select, textarea {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+/* RTL Helpers */
+[dir="rtl"] .rtl-mirror {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .font-serif-display {
+  font-family: 'Playfair Display', 'Amiri', serif;
+}
+
+/* Toast Notifications */
+#toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+[dir="rtl"] #toast-container {
+  right: auto;
+  left: 2rem;
+}
+
+.toast {
+  background-color: var(--bg-accent);
+  color: var(--bg-primary);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 280px;
+  max-width: 400px;
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 4px solid var(--brass);
+}
+
+[dir="rtl"] .toast {
+  border-left: none;
+  border-right: 4px solid var(--brass);
+}
+
+@keyframes slideIn {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Custom Audio Player Stylings */
+.audio-waveform-bar {
+  transition: height 0.2s ease;
+}
+
+.playing .audio-waveform-bar {
+  animation: barEqualize 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes barEqualize {
+  0% { height: 20%; }
+  100% { height: 100%; }
+}
+
+/* Image Zoom Effect */
+.img-zoom-container {
+  overflow: hidden;
+}
+.img-zoom-container img {
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.img-zoom-container:hover img {
+  transform: scale(1.06);
+}

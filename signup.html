@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Collector Society — Vinyl</title>
+  <meta name="description" content="Create a Vinyl collector account for advance vault notifications, listening lounge reservations, and private appraisal requests.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brass: { DEFAULT: '#c5a059', light: '#dfc287', dark: '#9e7b37' },
+            copper: { DEFAULT: '#c86d44', hover: '#b85b32' },
+            espresso: { DEFAULT: '#1c1613', light: '#2a201b', dark: '#12100e' },
+            ivory: { DEFAULT: '#fbf8f3', paper: '#f4efe6', dark: '#efe7da' },
+            burgundy: { DEFAULT: '#6b2d38', dark: '#5a242e' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-ivory dark:bg-espresso text-espresso dark:text-ivory min-h-screen flex flex-col justify-between items-center relative overflow-x-hidden overflow-y-auto font-sans-ui p-4">
+
+  <!-- Vinyl Grooves Background Overlay -->
+  <div class="absolute inset-0 vinyl-grooves-bg opacity-5 dark:opacity-20 pointer-events-none"></div>
+
+  <!-- TOP BAR -->
+  <div class="w-full max-w-7xl mx-auto flex items-center justify-between py-6 px-4 z-10">
+    <a href="index.html" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brass hover:text-espresso dark:text-ivory transition-colors">
+      <svg class="w-4 h-4 rtl-mirror" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Back to Boutique
+    </a>
+
+    <div class="flex items-center gap-3">
+      <button class="rtl-toggle-btn w-9 h-9 text-xs font-semibold rounded-full border border-brass/40 text-brass hover:bg-brass hover:text-white transition-colors flex items-center justify-center">
+        RTL
+      </button>
+              <button class="theme-toggle-btn w-9 h-9 flex items-center justify-center rounded-full border border-brass/30 text-espresso dark:text-ivory hover:text-brass transition-colors" aria-label="Toggle dark mode">
+          <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+    </div>
+  </div>
+
+  <!-- CENTERED AUTH CONTAINER -->
+  <div class="w-full max-w-lg my-auto relative z-10 py-6">
+    
+    <div class="bg-white dark:bg-[#181512] border border-brass/30 rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6 backdrop-blur-md">
+      
+      <!-- LOGO HEADER -->
+      <div class="text-center space-y-2">
+                  <a href="index.html" class="inline-flex items-center justify-center gap-3 group mb-2">
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-brass bg-espresso text-brass group-hover:rotate-90 transition-transform duration-500 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="3" stroke-width="1.5" fill="currentColor"/>
+                <path stroke-linecap="round" d="M12 3v3M21 12h-3M12 21v-3M3 12h3"/>
+              </svg>
+            </div>
+            <div class="font-serif-display text-2xl font-bold tracking-widest text-brass uppercase">Vinyl</div>
+          </a>
+          <h1 class="font-serif-display text-3xl font-bold tracking-wide">Join The Society</h1>
+        <p class="text-xs text-espresso/60 dark:text-ivory/60 font-light">Become an authenticated Vinyl collector member.</p>
+      </div>
+
+      <!-- FORM -->
+      <form id="signup-form" class="space-y-4">
+        <div>
+          <label for="signup-name" class="block text-xs uppercase tracking-wider text-espresso/70 dark:text-ivory/70 font-semibold mb-1">Full Name *</label>
+          <input type="text" id="signup-name" required placeholder="e.g. Julian Sterling" class="w-full px-4 py-2.5 rounded bg-black/5 dark:bg-black/50 border border-brass/30 text-espresso dark:text-ivory text-xs placeholder:text-espresso/40 dark:placeholder:text-ivory/30 focus:border-brass">
+        </div>
+
+        <div>
+          <label for="signup-email" class="block text-xs uppercase tracking-wider text-espresso/70 dark:text-ivory/70 font-semibold mb-1">Email Address *</label>
+          <input type="email" id="signup-email" required placeholder="julian@collector.com" class="w-full px-4 py-2.5 rounded bg-black/5 dark:bg-black/50 border border-brass/30 text-espresso dark:text-ivory text-xs placeholder:text-espresso/40 dark:placeholder:text-ivory/30 focus:border-brass">
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label for="signup-password" class="block text-xs uppercase tracking-wider text-espresso/70 dark:text-ivory/70 font-semibold mb-1">Password *</label>
+            <div class="relative">
+              <input type="password" id="signup-password" required placeholder="At least 8 chars" class="w-full px-4 py-2.5 rounded bg-black/5 dark:bg-black/50 border border-brass/30 text-espresso dark:text-ivory text-xs placeholder:text-espresso/40 dark:placeholder:text-ivory/30 focus:border-brass" pr-10>
+              <button type="button" onclick="const p = document.getElementById('signup-password'); p.type = p.type === 'password' ? 'text' : 'password';" class="absolute right-3 top-1/2 -translate-y-1/2 text-espresso/50 dark:text-ivory/50 hover:text-brass transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </button>
+            </div>
+          </div>
+          <div>
+            <label for="signup-confirm-password" class="block text-xs uppercase tracking-wider text-espresso/70 dark:text-ivory/70 font-semibold mb-1">Confirm Password *</label>
+            <div class="relative">
+              <input type="password" id="signup-confirm-password" required placeholder="Re-enter password" class="w-full px-4 py-2.5 rounded bg-black/5 dark:bg-black/50 border border-brass/30 text-espresso dark:text-ivory text-xs placeholder:text-espresso/40 dark:placeholder:text-ivory/30 focus:border-brass" pr-10>
+              <button type="button" onclick="const p = document.getElementById('signup-confirm-password'); p.type = p.type === 'password' ? 'text' : 'password';" class="absolute right-3 top-1/2 -translate-y-1/2 text-espresso/50 dark:text-ivory/50 hover:text-brass transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="signup-phone" class="block text-xs uppercase tracking-wider text-espresso/70 dark:text-ivory/70 font-semibold mb-1">Phone Number (Optional for Lounge Reservations)</label>
+          <input type="tel" id="signup-phone" placeholder="+44 7700 900077" class="w-full px-4 py-2.5 rounded bg-black/5 dark:bg-black/50 border border-brass/30 text-espresso dark:text-ivory text-xs placeholder:text-espresso/40 dark:placeholder:text-ivory/30 focus:border-brass">
+        </div>
+
+        <div class="pt-1">
+          <label class="flex items-start gap-2.5 cursor-pointer text-xs text-espresso/80 dark:text-ivory/80 leading-relaxed">
+            <input type="checkbox" id="signup-terms" required class="mt-0.5 rounded border-brass/40 text-brass focus:ring-brass bg-black/5 dark:bg-black/40">
+            <span>I accept the <a href="#" onclick="alert('Vinyl Collector Society Terms: Respect physical media, accurate grading, and private lounge acoustic etiquette.'); return false;" class="text-brass underline">Collector Terms</a> and agree to private release notifications.</span>
+          </label>
+        </div>
+
+                  <button type="submit" class="w-full py-3.5 bg-brass text-espresso font-semibold uppercase tracking-wider text-xs rounded hover:bg-brass-light transition-all shadow-lg transform hover:-translate-y-0.5">
+            Create Collector Account
+          </button>
+
+          <div class="relative mt-6 mb-4">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-brass/20"></div>
+            </div>
+            <div class="relative flex justify-center text-[10px] uppercase font-bold tracking-widest">
+              <span class="bg-white dark:bg-[#181512] px-3 text-espresso/50 dark:text-ivory/50">Or continue with</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <button type="button" class="flex items-center justify-center gap-2 w-full py-2.5 bg-black/5 dark:bg-black/30 border border-brass/30 text-espresso dark:text-ivory hover:border-brass hover:text-brass font-semibold text-xs rounded transition-colors">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Google
+            </button>
+            <button type="button" class="flex items-center justify-center gap-2 w-full py-2.5 bg-black/5 dark:bg-black/30 border border-brass/30 text-espresso dark:text-ivory hover:border-brass hover:text-brass font-semibold text-xs rounded transition-colors">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.04 2.26-.74 3.58-.8 1.58-.06 2.98.57 3.87 1.63-3.2 1.76-2.67 6.1 0 7.34-.69 1.48-1.55 3.05-2.53 4z"/><path d="M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.02 4.5-3.74 4.25z"/></svg>
+              Apple
+            </button>
+          </div>
+        </form>
+
+      <!-- FOOTER LINK -->
+      <div class="text-center pt-3 border-t border-brass/20 text-xs text-espresso/60 dark:text-ivory/60">
+        Already registered as a member?
+        <a href="login.html" class="text-brass font-bold hover:underline ml-1">Sign In</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM CAPTION -->
+  <div class="py-4 text-center text-[11px] text-espresso/40 dark:text-ivory/40 z-10 font-mono">
+    © 2026 Vinyl Fine Vinyl Ltd. Archival Member Registration.
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
